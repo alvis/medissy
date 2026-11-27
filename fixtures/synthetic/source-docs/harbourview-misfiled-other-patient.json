@@ -1,0 +1,90 @@
+{
+  "resourceType": "Bundle",
+  "meta": {
+    "tag": [
+      {
+        "system": "https://medissy.example.invalid/fhir/tag",
+        "code": "SYNTHETIC",
+        "display": "SYNTHETIC demo data - not a real person"
+      }
+    ]
+  },
+  "type": "collection",
+  "timestamp": "2026-09-02T09:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "urn:medissy:synthetic:other-synthetic-0002",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "other-synthetic-0002",
+        "meta": {
+          "tag": [
+            {
+              "system": "https://medissy.example.invalid/fhir/tag",
+              "code": "SYNTHETIC",
+              "display": "SYNTHETIC demo data - not a real person"
+            }
+          ]
+        },
+        "active": true,
+        "identifier": [
+          {
+            "system": "https://medissy.example.invalid/fhir/synthetic-patient-id",
+            "value": "SYNTH-0002"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "prefix": [
+              "SYNTHETIC"
+            ],
+            "family": "Otherpatient",
+            "given": [
+              "Jordan"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1978-09-30"
+      }
+    },
+    {
+      "fullUrl": "urn:medissy:synthetic:foreign-obs-001",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "foreign-obs-001",
+        "meta": {
+          "tag": [
+            {
+              "system": "https://medissy.example.invalid/fhir/tag",
+              "code": "SYNTHETIC",
+              "display": "SYNTHETIC demo data - not a real person"
+            }
+          ]
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2339-0",
+              "display": "Glucose [Mass/volume] in Blood"
+            }
+          ],
+          "text": "Blood glucose"
+        },
+        "subject": {
+          "reference": "Patient/other-synthetic-0002"
+        },
+        "effectiveDateTime": "2026-08-30T08:00:00Z",
+        "valueQuantity": {
+          "value": 5.6,
+          "unit": "mmol/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mmol/L"
+        }
+      }
+    }
+  ]
+}

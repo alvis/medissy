@@ -1,0 +1,17 @@
+// SYNTHETIC DEMO: every person, record and organisation in this profile is fictional. Never enter real personal or health data.
+// OpenClaw profile "medissy-dental" (Dr Ravi Riverside (SYNTHETIC dentist)).
+// Template (openclaw.json5): install replaces __REPO__ with the repository path and
+// __MEDISSY_ORIGIN__ with the Medissy origin, then copies it into the
+// profile state dir as ~/.openclaw-medissy-dental/openclaw.json. It holds no secrets.
+{
+  gateway: { mode: "local", port: 19783 },
+  agents: { defaults: { workspace: "__REPO__/profiles/dental/workspace" } },
+  // keep file logs off: task replies carry capability task ids
+  logging: { level: "silent", consoleLevel: "warn" },
+  skills: {
+    load: { extraDirs: ["__REPO__/skills"] },
+    entries: {
+      "a2a-client": { enabled: true, env: { A2A_ALLOWED_ORIGINS: "__MEDISSY_ORIGIN__" } },
+    },
+  },
+}

@@ -1,0 +1,17 @@
+SYNTHETIC DEMO DOCUMENT - fictional patient, fictional provider, not real health data.
+
+Northgate Cardiology Clinic
+Clinic letter to GP
+Date: 2026-10-20
+Patient: SYNTHETIC Morgan Testwell, DOB 1961-04-17 (id SYNTH-0001)
+
+Dear Dr A. Fictional,
+
+I reviewed Ms Testwell on 2026-10-14 for atrial fibrillation and hypertension.
+Blood pressure in clinic was 142/86 mmHg. Heart rate 78 bpm, irregular.
+Anticoagulation: she takes apixaban 5 mg twice daily (started 2026-06-15). Please update your medication
+list; your record still shows warfarin 3 mg daily. Amlodipine 5 mg daily continues.
+Follow-up in cardiology clinic is planned for 2026-12-01.
+
+Yours sincerely,
+Dr C. Fictional, Northgate Cardiology Clinic (SYNTHETIC)

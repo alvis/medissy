@@ -1,0 +1,14 @@
+SYNTHETIC DEMO DOCUMENT - fictional patient, fictional provider, not real health data.
+
+Northgate Cardiology Clinic
+12-lead ECG report
+Date: 2026-10-14
+Patient: SYNTHETIC Morgan Testwell, DOB 1961-04-17 (id SYNTH-0001)
+
+Time of recording: 2026-10-14 10:35 UTC.
+Rhythm: atrial fibrillation. Ventricular rate: 78 bpm.
+Intervals: not measurable in atrial fibrillation (QRS 92 ms).
+ST-T: no acute ST-segment change reported by the source.
+Conclusion: Atrial fibrillation with controlled ventricular rate (78 bpm). No acute ST-segment change reported by the source.
+
+Reported by: Dr C. Fictional (Northgate Cardiology Clinic, SYNTHETIC)

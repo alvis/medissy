@@ -1,0 +1,445 @@
+{
+  "label": "SYNTHETIC",
+  "note": "Fictional patient, providers and clinicians. No real health data. Do not use outside demos and tests.",
+  "patientId": "7b1f4c2e-5d3a-4e8b-9a61-2c0d8f4e1a35",
+  "sourceFileAccessRule": "A source file may be downloaded only when every record imported from it is in scope for the caller (covered by a grant in force, none denied). A file that also holds a record outside the scope, such as a restricted one, is never served; sourceDocuments[].recordIds lists the records each file holds.",
+  "referenceDate": "2026-11-25",
+  "staleBefore": "2025-11-25",
+  "canary": "MEDISSY-CANARY-RESTRICTED",
+  "providers": [
+    "Harbourview Family Practice",
+    "Northgate Cardiology Clinic",
+    "Riverside Dental Studio",
+    "St Imaginary General Hospital"
+  ],
+  "selfEnteredSource": "Morgan Testwell (patient-entered)",
+  "recordCount": 30,
+  "recordIds": [
+    "rec-pat-001",
+    "rec-alg-001",
+    "rec-alg-002",
+    "rec-med-001",
+    "rec-med-002",
+    "rec-med-003",
+    "rec-prov-001",
+    "rec-cond-001",
+    "rec-cond-002",
+    "rec-obs-001",
+    "rec-obs-002",
+    "rec-obs-003",
+    "rec-obs-004",
+    "rec-obs-005",
+    "rec-dr-001",
+    "rec-doc-001",
+    "rec-cond-003",
+    "rec-cond-004",
+    "rec-obs-006",
+    "rec-obs-007",
+    "rec-dr-002",
+    "rec-doc-002",
+    "rec-cond-005",
+    "rec-cond-006",
+    "rec-dr-003",
+    "rec-cond-007",
+    "rec-med-004",
+    "rec-obs-008",
+    "rec-doc-003",
+    "rec-prov-002"
+  ],
+  "groupDefinitions": {
+    "baseline": "category \"baseline\" (routine): patient, allergies, active medication statements and their provenance; released only via allowBaseline",
+    "cardiac": "category \"cardiac\" (routine)",
+    "dental": "category \"dental\" (routine)",
+    "unrelated": "categories \"musculoskeletal\" and \"dermatology\" (routine); irrelevant to the cardiac and dental scenarios",
+    "restricted": "sensitivity \"restricted\" (categories \"mental-health\" and \"substance-use\"); every one contains the canary token"
+  },
+  "groups": {
+    "baseline": [
+      "rec-pat-001",
+      "rec-alg-001",
+      "rec-alg-002",
+      "rec-med-001",
+      "rec-med-002",
+      "rec-med-003",
+      "rec-prov-001"
+    ],
+    "cardiac": [
+      "rec-cond-001",
+      "rec-cond-002",
+      "rec-obs-001",
+      "rec-obs-002",
+      "rec-obs-003",
+      "rec-obs-004",
+      "rec-obs-005",
+      "rec-dr-001",
+      "rec-doc-001"
+    ],
+    "dental": [
+      "rec-cond-003",
+      "rec-cond-004",
+      "rec-obs-006",
+      "rec-obs-007",
+      "rec-dr-002",
+      "rec-doc-002"
+    ],
+    "unrelated": [
+      "rec-cond-005",
+      "rec-cond-006",
+      "rec-dr-003"
+    ],
+    "restricted": [
+      "rec-cond-007",
+      "rec-med-004",
+      "rec-obs-008",
+      "rec-doc-003",
+      "rec-prov-002"
+    ]
+  },
+  "resourceTypes": {
+    "Patient": [
+      "rec-pat-001"
+    ],
+    "AllergyIntolerance": [
+      "rec-alg-001",
+      "rec-alg-002"
+    ],
+    "MedicationStatement": [
+      "rec-med-001",
+      "rec-med-002",
+      "rec-med-003",
+      "rec-med-004"
+    ],
+    "Condition": [
+      "rec-cond-001",
+      "rec-cond-002",
+      "rec-cond-003",
+      "rec-cond-004",
+      "rec-cond-005",
+      "rec-cond-006",
+      "rec-cond-007"
+    ],
+    "Observation": [
+      "rec-obs-001",
+      "rec-obs-002",
+      "rec-obs-003",
+      "rec-obs-004",
+      "rec-obs-005",
+      "rec-obs-006",
+      "rec-obs-007",
+      "rec-obs-008"
+    ],
+    "DiagnosticReport": [
+      "rec-dr-001",
+      "rec-dr-002",
+      "rec-dr-003"
+    ],
+    "DocumentReference": [
+      "rec-doc-001",
+      "rec-doc-002",
+      "rec-doc-003"
+    ],
+    "Provenance": [
+      "rec-prov-001",
+      "rec-prov-002"
+    ]
+  },
+  "canaryRecordIds": [
+    "rec-cond-007",
+    "rec-med-004",
+    "rec-obs-008",
+    "rec-doc-003",
+    "rec-prov-002"
+  ],
+  "canarySourceFiles": [
+    "stimaginary-behavioural-health.json",
+    "stimaginary-psychotherapy-summary.txt"
+  ],
+  "stale": [
+    "rec-obs-002",
+    "rec-obs-004"
+  ],
+  "incomplete": [
+    "rec-obs-005",
+    "rec-obs-007"
+  ],
+  "conflicts": [
+    {
+      "topic": "anticoagulant",
+      "recordIds": [
+        "rec-med-001",
+        "rec-med-002"
+      ],
+      "note": "Apixaban (Northgate, 2026) and warfarin (Harbourview, 2024) are both active. Preserve both; never reconcile."
+    }
+  ],
+  "patientEntered": [
+    "rec-obs-003"
+  ],
+  "unverified": [
+    "rec-doc-002"
+  ],
+  "injection": [
+    "rec-doc-002"
+  ],
+  "foreignPatientFiles": [
+    "harbourview-misfiled-other-patient.json"
+  ],
+  "scenarios": {
+    "cardiology": {
+      "grant": {
+        "categories": [
+          "cardiac"
+        ],
+        "allowBaseline": true,
+        "maxSensitivity": "routine"
+      },
+      "visibleRecordIds": [
+        "rec-pat-001",
+        "rec-alg-001",
+        "rec-alg-002",
+        "rec-med-001",
+        "rec-med-002",
+        "rec-med-003",
+        "rec-prov-001",
+        "rec-cond-001",
+        "rec-cond-002",
+        "rec-obs-001",
+        "rec-obs-002",
+        "rec-obs-003",
+        "rec-obs-004",
+        "rec-obs-005",
+        "rec-dr-001",
+        "rec-doc-001"
+      ]
+    },
+    "dental": {
+      "grant": {
+        "categories": [
+          "dental"
+        ],
+        "allowBaseline": true,
+        "maxSensitivity": "routine"
+      },
+      "visibleRecordIds": [
+        "rec-pat-001",
+        "rec-alg-001",
+        "rec-alg-002",
+        "rec-med-001",
+        "rec-med-002",
+        "rec-med-003",
+        "rec-prov-001",
+        "rec-cond-003",
+        "rec-cond-004",
+        "rec-obs-006",
+        "rec-obs-007",
+        "rec-dr-002",
+        "rec-doc-002"
+      ]
+    },
+    "unauthorizedClinician": {
+      "grant": null,
+      "visibleRecordIds": []
+    }
+  },
+  "sourceDocuments": [
+    {
+      "file": "harbourview-gp-summary.json",
+      "boxFileId": "9100000001",
+      "version": "1",
+      "provider": "Harbourview Family Practice",
+      "format": "json",
+      "sha256": "f43c10d19115ee6774bb91cde11ce16f99584ea3aacde28c122cbc7790b94f04",
+      "sizeBytes": 10218,
+      "verification": "synthetic-provider",
+      "outcome": "import",
+      "recordIds": [
+        "rec-pat-001",
+        "rec-alg-001",
+        "rec-med-002",
+        "rec-cond-002",
+        "rec-obs-002",
+        "rec-cond-005",
+        "rec-cond-006"
+      ]
+    },
+    {
+      "file": "harbourview-knee-xray-report.txt",
+      "boxFileId": "9100000002",
+      "version": "1",
+      "provider": "Harbourview Family Practice",
+      "format": "text",
+      "sha256": "19218a16566215d838e2e29c06fada95dc12e13dc17e799146337742950dde41",
+      "sizeBytes": 577,
+      "verification": "synthetic-provider",
+      "outcome": "import",
+      "recordIds": [
+        "rec-dr-003"
+      ]
+    },
+    {
+      "file": "harbourview-misfiled-other-patient.json",
+      "boxFileId": "9100000003",
+      "version": "1",
+      "provider": "Harbourview Family Practice",
+      "format": "json",
+      "sha256": "a0063381fd7f6a81550cc9a36746ea325d8da7c9435e480e501f6634256fd540",
+      "sizeBytes": 2277,
+      "verification": "synthetic-provider",
+      "outcome": "reject",
+      "rejectReason": "foreign-patient",
+      "recordIds": []
+    },
+    {
+      "file": "northgate-cardiology-record.json",
+      "boxFileId": "9100000011",
+      "version": "1",
+      "provider": "Northgate Cardiology Clinic",
+      "format": "json",
+      "sha256": "7f9fe061ccf190793aa9d7e98ded5fb7e1eaa7639966c45b454eecf7215561d9",
+      "sizeBytes": 9875,
+      "verification": "synthetic-provider",
+      "outcome": "import",
+      "recordIds": [
+        "rec-med-001",
+        "rec-med-003",
+        "rec-prov-001",
+        "rec-cond-001",
+        "rec-obs-001",
+        "rec-obs-004",
+        "rec-obs-005"
+      ]
+    },
+    {
+      "file": "northgate-ecg-report-2026-10-14.txt",
+      "boxFileId": "9100000012",
+      "version": "1",
+      "provider": "Northgate Cardiology Clinic",
+      "format": "text",
+      "sha256": "9db9fefea4d4186655b6a769d71ac749a45f5e120858c60c842009ef7fcf5337",
+      "sizeBytes": 632,
+      "verification": "synthetic-provider",
+      "outcome": "import",
+      "recordIds": [
+        "rec-dr-001"
+      ]
+    },
+    {
+      "file": "northgate-clinic-letter-2026-10-20.txt",
+      "boxFileId": "9100000013",
+      "version": "1",
+      "provider": "Northgate Cardiology Clinic",
+      "format": "text",
+      "sha256": "c338ec696affd2a1697d6683cff7259122032c1565356f75f6c56add69e80b10",
+      "sizeBytes": 717,
+      "verification": "synthetic-provider",
+      "outcome": "import",
+      "recordIds": [
+        "rec-doc-001"
+      ]
+    },
+    {
+      "file": "riverside-dental-chart.json",
+      "boxFileId": "9100000021",
+      "version": "1",
+      "provider": "Riverside Dental Studio",
+      "format": "json",
+      "sha256": "2f1a8e65cc8b7bb422a22893f1679d65a9b8177baf24da0a0b4bee0bf7cb8152",
+      "sizeBytes": 4746,
+      "verification": "synthetic-provider",
+      "outcome": "import",
+      "recordIds": [
+        "rec-alg-002",
+        "rec-cond-003",
+        "rec-cond-004"
+      ]
+    },
+    {
+      "file": "riverside-panoramic-report-2026-10-28.txt",
+      "boxFileId": "9100000022",
+      "version": "1",
+      "provider": "Riverside Dental Studio",
+      "format": "text",
+      "sha256": "a8b819f35006facbec12e48bb0ae111cfdb43933faaddb2a0add5bcb54ec6fa3",
+      "sizeBytes": 548,
+      "verification": "synthetic-provider",
+      "outcome": "import",
+      "recordIds": [
+        "rec-dr-002"
+      ]
+    },
+    {
+      "file": "riverside-referral-letter-2026-11-03.txt",
+      "boxFileId": "9100000023",
+      "version": "1",
+      "provider": "Riverside Dental Studio",
+      "format": "text",
+      "sha256": "3697e1bf740c3ae8a70ccd6987f986ca777faff71a58a0b6465b21968aaabb7b",
+      "sizeBytes": 1109,
+      "verification": "unverified",
+      "outcome": "import",
+      "recordIds": [
+        "rec-doc-002"
+      ]
+    },
+    {
+      "file": "stimaginary-lab-results.json",
+      "boxFileId": "9100000031",
+      "version": "1",
+      "provider": "St Imaginary General Hospital",
+      "format": "json",
+      "sha256": "c652580e8b097801b2a12f45aa8f45f3c9592c0a19c10fa1cb369b9946020a2e",
+      "sizeBytes": 3047,
+      "verification": "synthetic-provider",
+      "outcome": "import",
+      "recordIds": [
+        "rec-obs-006",
+        "rec-obs-007"
+      ]
+    },
+    {
+      "file": "stimaginary-behavioural-health.json",
+      "boxFileId": "9100000032",
+      "version": "1",
+      "provider": "St Imaginary General Hospital",
+      "format": "json",
+      "sha256": "1c0a5ee6802f538d7ee58346973f72a2bc3725be405103f2a26f631eea46abda",
+      "sizeBytes": 6184,
+      "verification": "synthetic-provider",
+      "outcome": "import",
+      "recordIds": [
+        "rec-cond-007",
+        "rec-med-004",
+        "rec-obs-008",
+        "rec-prov-002"
+      ]
+    },
+    {
+      "file": "stimaginary-psychotherapy-summary.txt",
+      "boxFileId": "9100000033",
+      "version": "1",
+      "provider": "St Imaginary General Hospital",
+      "format": "text",
+      "sha256": "a0d1bf4b752c5f3ec51d64f3e8a90367ffb285dcf56f704f09f16dd13e8d392e",
+      "sizeBytes": 616,
+      "verification": "synthetic-provider",
+      "outcome": "import",
+      "recordIds": [
+        "rec-doc-003"
+      ]
+    },
+    {
+      "file": "patient-home-bp-log.json",
+      "boxFileId": "9100000041",
+      "version": "1",
+      "provider": "Morgan Testwell (patient-entered)",
+      "format": "json",
+      "sha256": "1dc873ec222070de1873a084d4343429b3334db1887cbd8b12d20d3f5b634292",
+      "sizeBytes": 2842,
+      "verification": "patient-entered",
+      "outcome": "import",
+      "recordIds": [
+        "rec-obs-003"
+      ]
+    }
+  ]
+}
