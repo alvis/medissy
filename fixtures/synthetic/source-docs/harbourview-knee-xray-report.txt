@@ -1,0 +1,12 @@
+SYNTHETIC DEMO DOCUMENT - fictional patient, fictional provider, not real health data.
+
+Harbourview Family Practice
+Radiology report: left knee, 2 views
+Date: 2025-03-18
+Patient: SYNTHETIC Morgan Testwell, DOB 1961-04-17 (id SYNTH-0001)
+
+Indication: left knee pain, 18 months.
+Findings: Mild narrowing of the medial joint space. Small marginal osteophytes. No fracture or effusion seen.
+Conclusion: Mild joint-space narrowing of the medial compartment, consistent with early osteoarthritis per the source.
+
+Reported by: Dr A. Fictional (Harbourview Family Practice, SYNTHETIC)

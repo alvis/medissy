@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: true
+minimumReleaseAgeExclude:
+  - eslint-plugin-sonarjs@4.2.3
+  - tsc-alias@1.9.11
+  - '@types/node@24.19.4'

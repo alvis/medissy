@@ -1,5 +1,14 @@
 # Build Medissy — implementation brief for a coding agent
 
+> [!NOTE]
+> **Departures in this build.** The brief below is unchanged. Where the shipped build differs from it, an ADR records the reason:
+>
+> - **I-1. No OpenClaw adapter or plugin.** Medissy is reached only over A2A 1.0. OpenClaw uses the generic `skills/a2a-client` skill, with no plugin and no MCP (§3.5, §9; [ADR-6](architecture/adr/ADR-6.md)).
+> - **I-2. Medissy renders the HTML card.** Results carry an escaped, script-free `text/html` part instead of local client templates (§3.5, §9; [ADR-6](architecture/adr/ADR-6.md)).
+> - **I-3. In-process demo issuer.** `/demo-idp` runs oidc-provider inside Medissy instead of an external test issuer. Production swaps in an external IdP (§3.4; [ADR-3](architecture/adr/ADR-3.md)).
+> - **I-4. Doctor roles from the institution, not a registry.** Doctors sign in at a second synthetic issuer, `/institution-idp` ("Northgate Health (SYNTHETIC)"). Their roles come from its ID token, intersected with an allowlist, and their organisation from Medissy's issuer config. The clinician registry is written just in time at each sign-in instead of being pre-seeded. The Agent Card advertises no issuer or security scheme, so it does not reveal which hospital the patient uses; sign-in details arrive inside the task (§5, §8; [ADR-9](architecture/adr/ADR-9.md)).
+> - **D10. The task ID is the only poll secret.** Clinicians sign in inside the task, so the calling agent has no credential of its own, and anyone holding a task ID can poll that task. A08 is PARTIAL (§12; [ADR-4](architecture/adr/ADR-4.md), [STATUS](STATUS.md)).
+
 **Mission:** Build and demonstrate a real, single-patient, patient-controlled health information envoy running on a Fly Sprite, using the official Box connector, A2A with OIDC-backed OAuth access tokens, and a clinician-facing OpenClaw generative UI integration. This is a Hacksgiving 2026 prototype with synthetic records only.
 
 Read the root README before implementation. Treat this file as the authoritative MVP brief; update the README to reflect what actually ships. Do not claim a mock integration is live. Keep the code deployable, testable and easy for a judge to understand.

@@ -1,0 +1,173 @@
+{
+  "resourceType": "Bundle",
+  "meta": {
+    "tag": [
+      {
+        "system": "https://medissy.example.invalid/fhir/tag",
+        "code": "SYNTHETIC",
+        "display": "SYNTHETIC demo data - not a real person"
+      }
+    ]
+  },
+  "type": "collection",
+  "timestamp": "2026-10-28T13:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "urn:medissy:synthetic:rec-alg-002",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "rec-alg-002",
+        "meta": {
+          "tag": [
+            {
+              "system": "https://medissy.example.invalid/fhir/tag",
+              "code": "SYNTHETIC",
+              "display": "SYNTHETIC demo data - not a real person"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "type": "allergy",
+        "category": [
+          "environment"
+        ],
+        "criticality": "low",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "300916003",
+              "display": "Latex allergy"
+            }
+          ],
+          "text": "Latex allergy"
+        },
+        "patient": {
+          "reference": "Patient/7b1f4c2e-5d3a-4e8b-9a61-2c0d8f4e1a35"
+        },
+        "recordedDate": "2026-10-28T12:50:00Z",
+        "recorder": {
+          "display": "Riverside Dental Studio"
+        },
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "271807003",
+                    "display": "Skin eruption"
+                  }
+                ],
+                "text": "Contact dermatitis"
+              }
+            ],
+            "severity": "mild"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:medissy:synthetic:rec-cond-003",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "rec-cond-003",
+        "meta": {
+          "tag": [
+            {
+              "system": "https://medissy.example.invalid/fhir/tag",
+              "code": "SYNTHETIC",
+              "display": "SYNTHETIC demo data - not a real person"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Impacted lower right third molar (tooth 48), extraction planned"
+        },
+        "subject": {
+          "reference": "Patient/7b1f4c2e-5d3a-4e8b-9a61-2c0d8f4e1a35"
+        },
+        "onsetDateTime": "2026-10-28",
+        "recordedDate": "2026-10-28T12:45:00Z",
+        "recorder": {
+          "display": "Riverside Dental Studio"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:medissy:synthetic:rec-cond-004",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "rec-cond-004",
+        "meta": {
+          "tag": [
+            {
+              "system": "https://medissy.example.invalid/fhir/tag",
+              "code": "SYNTHETIC",
+              "display": "SYNTHETIC demo data - not a real person"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "History of prolonged bleeding after a dental extraction (2019), patient-reported"
+        },
+        "subject": {
+          "reference": "Patient/7b1f4c2e-5d3a-4e8b-9a61-2c0d8f4e1a35"
+        },
+        "onsetDateTime": "2019-05-14",
+        "recordedDate": "2026-10-28T12:55:00Z",
+        "recorder": {
+          "display": "Riverside Dental Studio"
+        }
+      }
+    }
+  ]
+}

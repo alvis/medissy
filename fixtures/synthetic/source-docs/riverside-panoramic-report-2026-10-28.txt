@@ -1,0 +1,12 @@
+SYNTHETIC DEMO DOCUMENT - fictional patient, fictional provider, not real health data.
+
+Riverside Dental Studio
+Panoramic radiograph report
+Date: 2026-10-28
+Patient: SYNTHETIC Morgan Testwell, DOB 1961-04-17 (id SYNTH-0001)
+
+Time of exposure: 2026-10-28 13:15 UTC.
+Findings: Lower right third molar (tooth 48) impacted, mesioangular. No periapical lesion seen.
+Conclusion: Impacted lower right third molar (tooth 48), mesioangular. Extraction assessment recommended by the source.
+
+Reported by: Dr R. Fictional (Riverside Dental Studio, SYNTHETIC)
